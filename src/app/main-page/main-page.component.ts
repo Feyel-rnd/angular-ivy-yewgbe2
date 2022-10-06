@@ -27,13 +27,22 @@ export class MainPageComponent implements OnInit {
           // Redirect the user
           this.router.navigate([redirectUrl]);
   }
+  analyses_actives=""
   ngOnInit() {
+    
+    
     this.app = new Realm.App('data-icqqg')
     //this.userRefreshToken = sessionStorage.getItem("userRefreshToken");
     this.userRefreshToken = sessionStorage.getItem("userRefreshToken");
     //console.log(this.app.currentUser)
     this.email = sessionStorage.getItem("email");
     this.username = sessionStorage.getItem("username");
+    
+  const mongo = this.app.currentUser.mongoClient('Cluster0');
+  const collection = mongo.db('Data').collection("Analyses");
+  collection.find({active:true}).then((value)=>{
+    this.analyses_actives = value.length.toString()
+  })
     //sessionStorage.getItem("userRefreshToken");
     //sessionStorage.getItem("email");
     //sessionStorage.getItem("username");
