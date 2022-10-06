@@ -9,12 +9,13 @@ import { SecondaryPageComponent } from './secondary-page/secondary-page.componen
 import { ConnexionFormModule } from './connexion-form/connexion-form.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainPageModule } from './main-page/main-page.module';
+import { AdminGuard } from './main-page/admin.guard';
 
 @NgModule({
   imports:      [ BrowserModule,AppRoutingModule, ConnexionFormModule, ReactiveFormsModule, MainPageModule],
   declarations: [ AppComponent, HelloComponent, SecondaryPageComponent],
   bootstrap:    [ AppComponent ],
-  providers: [YourGuard],
+  providers: [YourGuard,AdminGuard],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
