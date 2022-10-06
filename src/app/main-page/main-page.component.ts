@@ -16,7 +16,7 @@ export class MainPageComponent implements OnInit {
    userid : any;
    email : any;
   // app : any
-  
+  authorized : boolean;
   app = new Realm.App('data-icqqg');
   async LogOut(){
 
@@ -39,7 +39,7 @@ export class MainPageComponent implements OnInit {
     this.email = sessionStorage.getItem("email");
     this.username = sessionStorage.getItem("username");
     this.userid = sessionStorage.getItem("userId");
-    
+    this.authorized = sessionStorage.getItem("userId")=="6322ffbb91365a9b736d5a77";
   const mongo = this.app.currentUser.mongoClient('Cluster0');
   const collection = mongo.db('Data').collection("Analyses");
   collection.find({active:true}).then((value)=>{
