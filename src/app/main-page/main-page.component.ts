@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import * as Realm from 'realm-web';
+import {ConnexionFormComponent} from '../connexion-form/connexion-form.component'
 
+//const app = ConnexionFormComponent
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -17,7 +19,7 @@ export class MainPageComponent implements OnInit {
    email : any;
   // app : any
   authorized : boolean;
-  app = new Realm.App('data-icqqg');
+  @Input() app = new Realm.App('data-icqqg');
   async LogOut(){
 
     await this.app.allUsers[sessionStorage.getItem("userId")].logOut()
