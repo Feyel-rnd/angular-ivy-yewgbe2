@@ -8,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class MyAnalysisPageComponent implements OnInit {
 
   constructor() { }
-
+print : string;
   ngOnInit() {
+    
+    const app = new Realm.App('data-icqqg');
+    const mongo = app.currentUser.mongoClient('Cluster0');
+    const collection = mongo.db('Users').collection("Example ID");
+    collection.find().then((value:any)=>{
+      //console.log(value)
+      this.print = value.owner_id
+    })
   }
 
 }
