@@ -13,6 +13,7 @@ export class MainPageComponent implements OnInit {
    userRefreshToken : any;
   // bla : any;
    username : any;
+   userid : any;
    email : any;
   // app : any
   
@@ -37,6 +38,7 @@ export class MainPageComponent implements OnInit {
     //console.log(this.app.currentUser)
     this.email = sessionStorage.getItem("email");
     this.username = sessionStorage.getItem("username");
+    this.userid = sessionStorage.getItem("userId");
     
   const mongo = this.app.currentUser.mongoClient('Cluster0');
   const collection = mongo.db('Data').collection("Analyses");

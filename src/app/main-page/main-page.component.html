@@ -48,6 +48,7 @@
               <span class="ms-1 d-none d-sm-inline">Répondre</span>
             </a>
           </li>
+          
           <li class="nav-item pb-5">
             <a routerLink="first" class="nav-link align-middle px-0">
               <i class="fs-4 bi-house"></i
@@ -62,6 +63,14 @@
               <span class="ms-1 d-none d-sm-inline">Mon profil sensoriel</span>
             </a>
           </li>
+          <li *ngIf="true" class="nav-item pb-5">
+          <a routerLink="second" class="nav-link align-middle px-0">
+            <i class="fs-4 bi-house"></i
+            ><mat-icon matTooltip="Répondre" matBadge="{{analyses_actives}}">edit</mat-icon>
+            <span class="ms-1 d-none d-sm-inline">Répondre</span>
+          </a>
+        </li>
+
         </ul>
         <hr />
         <div class="dropdown pb-4">
@@ -88,6 +97,7 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <li><a class="dropdown-item" href="#">Paramètres</a></li>
+            
             <li><a class="dropdown-item" href="#">Profil</a></li>
             <li>
               <hr class="dropdown-divider" />
