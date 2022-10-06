@@ -15,6 +15,7 @@ import { AnswerPageComponent } from './main-page/answer-page/answer-page.compone
 import { CreateAnalysisPageComponent } from './main-page/create-analysis-page/create-analysis-page.component';
 import { SettingsPageComponent } from './main-page/settings-page/settings-page.component';
 import { MyProfilePageComponent } from './main-page/my-profile-page/my-profile-page.component';
+import { AdminGuard } from './main-page/admin.guard';
 //import { RegisterFormComponent } from './register-form/register-form.component';
 
 //const routes: Routes = []; // sets up routes constant where you define your routes
@@ -44,6 +45,7 @@ const routes: Routes = [
       },
       {
         path: 'create-analysis', // child route path
+        canActivate: [AdminGuard],
         component: CreateAnalysisPageComponent, // child route component that the router renders
       },
       {
