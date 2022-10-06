@@ -52,7 +52,7 @@
           <li class="nav-item pb-5">
             <a routerLink="first" class="nav-link align-middle px-0">
               <i class="fs-4 bi-house"></i
-              ><mat-icon matTooltip="Mes analyses">collections_bookmark</mat-icon>
+              ><mat-icon matTooltip="Mes analyses">library_books</mat-icon>
               <span class="ms-1 d-none d-sm-inline">Mes analyses</span>
             </a>
           </li>
@@ -66,8 +66,8 @@
           <li *ngIf="authorized" class="nav-item pb-5">
           <a routerLink="second" class="nav-link align-middle px-0">
             <i class="fs-4 bi-house"></i
-            ><mat-icon matTooltip="Répondre" matBadge="{{analyses_actives}}">edit</mat-icon>
-            <span class="ms-1 d-none d-sm-inline">Répondre</span>
+            ><mat-icon matTooltip="Créer une analyse">library_add</mat-icon>
+            <span class="ms-1 d-none d-sm-inline">Créer une analyse</span>
           </a>
         </li>
 
@@ -111,7 +111,6 @@
       Bienvenue {{ this.username }} ! <br /><br />
 
       <router-outlet></router-outlet>
-      <mat-icon>edit</mat-icon>
     </div>
   </div>
 </div>

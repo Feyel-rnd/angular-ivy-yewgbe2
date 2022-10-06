@@ -8,6 +8,13 @@ import { ConnexionFormComponent } from './connexion-form/connexion-form.componen
 import { CheckPageComponent } from './check-page/check-page.component';
 import { FirstItemComponent } from './main-page/first-item/first-item.component';
 import { SecondItemComponent } from './main-page/second-item/second-item.component';
+import { HomePageComponent } from './main-page/home-page/home-page.component';
+import { MySensoryProfilePageComponent } from './main-page/my-sensory-profile-page/my-sensory-profile-page.component';
+import { MyAnalysisPageComponent } from './main-page/my-analysis-page/my-analysis-page.component';
+import { AnswerPageComponent } from './main-page/answer-page/answer-page.component';
+import { CreateAnalysisPageComponent } from './main-page/create-analysis-page/create-analysis-page.component';
+import { SettingsPageComponent } from './main-page/settings-page/settings-page.component';
+import { MyProfilePageComponent } from './main-page/my-profile-page/my-profile-page.component';
 //import { RegisterFormComponent } from './register-form/register-form.component';
 
 //const routes: Routes = []; // sets up routes constant where you define your routes
@@ -20,12 +27,32 @@ const routes: Routes = [
     canActivate: [YourGuard],
     children: [
       {
-        path: 'first', // child route path
-        component: FirstItemComponent, // child route component that the router renders
+        path: 'home', // child route path
+        component: HomePageComponent, // child route component that the router renders
       },
       {
-        path: 'second',
-        component: SecondItemComponent, // another child route component that the router renders
+        path: 'answer',
+        component: AnswerPageComponent, // another child route component that the router renders
+      },
+      {
+        path: 'my-analysis', // child route path
+        component: MyAnalysisPageComponent, // child route component that the router renders
+      },
+      {
+        path: 'my-sensory-profile',
+        component: MySensoryProfilePageComponent, // another child route component that the router renders
+      },
+      {
+        path: 'create-analysis', // child route path
+        component: CreateAnalysisPageComponent, // child route component that the router renders
+      },
+      {
+        path: 'settings',
+        component: SettingsPageComponent, // another child route component that the router renders
+      },
+      {
+        path: 'profile', // child route path
+        component: MyProfilePageComponent, // child route component that the router renders
       },
     ],
   },
