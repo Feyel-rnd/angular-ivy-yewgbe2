@@ -17,7 +17,7 @@ export class FirstItemComponent implements OnInit {
   const mongo = app.currentUser.mongoClient('Cluster0');
   const collection = mongo.db('Users').collection("Example ID");
   collection.find({state:true}).then((value)=>{
-    console.log(value)
+    //console.log(value)
   })
   
 
